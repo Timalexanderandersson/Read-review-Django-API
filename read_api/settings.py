@@ -16,15 +16,17 @@ import os
 if os.path.exists('env.py'):
     import env
 
-CLOUDINARY_STORAGE = {
-    "CLOUDINARY_URL": os.environ.get("CLOUDINARY_URL")
-}
-MEDIA_URL = "/uploads/"
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+}
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -36,6 +38,10 @@ SECRET_KEY = 'django-insecure-b1*9mz$vy4#*cjzl_ew_#2@_6u10sbj+=&^!s2+2mv)5am8x^r
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
@@ -50,6 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'rest_framework',
+
+    'post',
+    'comment',
 ]
 
 MIDDLEWARE = [
