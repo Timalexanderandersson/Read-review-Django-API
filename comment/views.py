@@ -1,24 +1,27 @@
 from rest_framework.views import APIView
 from django.http import Http404
 from rest_framework.response import Response
-from rest_framework import status, permissions
+from rest_framework import generics, permissions
 from .models import Comments
 from .serializers import CommentSerializer, CommentContentSerializer
 from read_api.permissions import UserOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 # Comment list
-class CommentList(APIView):
+class CommentList(generics.ListCreateAPIView):
     """
     Function for GET commentlists and convert to JSON data.
+    Filtering post id.
     """
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Comments.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['post']
 
-    def get(self, request):
-        comments = Comments.objects.all()
-        serializer = CommentSerializer(comments, many=True)
-        return Response(serializer.data)
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
     def post(self, request):
         """

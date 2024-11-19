@@ -75,4 +75,3 @@ class PostContent(APIView):
         post = self.post_object(pk)
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
