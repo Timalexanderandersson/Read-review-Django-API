@@ -39,11 +39,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
-'https://read-review-django-api-b8922a0fef0a.herokuapp.com']
+'read-review-django-api-b8922a0fef0a.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
-    'https://read-review-django-api-b8922a0fef0a.herokuapp.com'
 ]
 
 
