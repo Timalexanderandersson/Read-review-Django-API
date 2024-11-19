@@ -1,24 +1,25 @@
 from django.http import Http404
-from rest_framework import status, permissions
+from rest_framework import status, permissions, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Post
 from .serializers import PostSerializer
 from read_api.permissions import UserOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 # Post list
-class PostList(APIView):
+class PostList(generics.ListCreateAPIView):
     """
     Showing all of the book posts.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = PostSerializer
+    queryset = Post.objects.all()
+    filter_backends = [DjangoFilterBackend]
 
-    def get(self, request):
-        post = Post.objects.all()
-        serializer = PostSerializer(post, many=True)
-        return Response(serializer.data)
+    def perform_create(self, serializer):
+        return serializer.save(user=self.request.user)
 
     def post(self, request):
         """
