@@ -43,6 +43,7 @@ ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
+    'https://read-review-django-api-b8922a0fef0a.herokuapp.com'
 ]
 
 
@@ -95,17 +96,19 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
+
 if 'DEV' in os.environ:
-     DATABASES = {
-         'default': {
-             'ENGINE': 'django.db.backends.sqlite3',
-             'NAME': BASE_DIR / 'db.sqlite3',
-         }
-     }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 else:
-     DATABASES = {
-         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-     }
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
+
 
 
 
