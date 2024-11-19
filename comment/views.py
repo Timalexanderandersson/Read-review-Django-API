@@ -3,7 +3,7 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from .models import Comments
-from .serializers import CommentSerializer
+from .serializers import CommentSerializer, CommentContentSerializer
 from read_api.permissions import UserOrReadOnly
 
 
@@ -33,7 +33,7 @@ class CommentList(APIView):
 
 # Comment content
 class CommentContent(APIView):
-    serializer_class = CommentSerializer
+    serializer_class = CommentContentSerializer
     permission_classes = [UserOrReadOnly]
 
     def comment_object(self, pk):
@@ -53,7 +53,7 @@ class CommentContent(APIView):
         404 if validation fail.
         """
         comment = self.comment_object(pk)
-        serializer = CommentSerializer(comment)
+        serializer = CommentContentSerializer(comment)
         return Response(serializer.data)
 
     def put(self, request, pk):
@@ -62,7 +62,7 @@ class CommentContent(APIView):
         404 if validation fail.
         """
         comment = self.comment_object(pk)
-        serializer = CommentSerializer(comment, data=request.data)
+        serializer = CommentContentSerializer(comment, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
