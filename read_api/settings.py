@@ -46,7 +46,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://read-review-django-api-b8922a0fef0a.herokuapp.com'
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
