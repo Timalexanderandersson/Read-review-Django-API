@@ -43,7 +43,9 @@ os.environ.get('ALLOWED_HOST')]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
-    'https://read-review-django-api-b8922a0fef0a.herokuapp.com'
+    'https://read-review-django-api-b8922a0fef0a.herokuapp.com',
+    'https://3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net',
+
 ]
 
 # Application definition
