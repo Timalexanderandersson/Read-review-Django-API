@@ -132,10 +132,9 @@ if 'CLIENT_ORIGIN' in os.environ:
      CORS_ALLOWED_ORIGINS = [
          os.environ.get('CLIENT_ORIGIN')
      ]
-else:
+if 'CLIENT_ORIGIN_DEV' in os.environ:
      CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https://.*\.gitpod\.io$",
-
+         r"^https://.*\.codeinstitute-ide\.net$",
      ]
 
 CORS_ALLOW_CREDENTIALS = True
