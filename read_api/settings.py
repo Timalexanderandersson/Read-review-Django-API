@@ -135,7 +135,6 @@ if 'CLIENT_ORIGIN' in os.environ:
 else:
      CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https://.*\.gitpod\.io$",
-         "https://3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net",
 
      ]
 
