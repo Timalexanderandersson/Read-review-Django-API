@@ -39,7 +39,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
-os.environ.get('ALLOWED_HOST')]
+os.environ.get('ALLOWED_HOST'),
+'3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
@@ -118,13 +119,13 @@ JWT_AUTH_SAMESITE = 'None'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
@@ -134,6 +135,8 @@ if 'CLIENT_ORIGIN' in os.environ:
 else:
      CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https://.*\.gitpod\.io$",
+         "https://3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net",
+
      ]
 
 CORS_ALLOW_CREDENTIALS = True
