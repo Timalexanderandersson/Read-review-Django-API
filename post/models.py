@@ -11,7 +11,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     image_post = models.ImageField(
-        upload_to="images/", default='book-front-page_rt7nvr'
+        upload_to="images/", default='https://res.cloudinary.com/dwxzdd3bf/image/upload/v1733151833/media/images/book-front-page_w2impn.webp'
     )
 
     class Meta:
