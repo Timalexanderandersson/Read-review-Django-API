@@ -38,7 +38,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = 'DEV' in os.environ
-#DEBUG = False
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net','8000-timalexande-readreviewd-xncsvs9g0j9.ws.codeinstitute-ide.net',
