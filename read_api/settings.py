@@ -37,9 +37,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+#DEBUG = 'DEV' in os.environ
+#DEBUG = True
 
-ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
+
+ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net','8000-timalexande-readreviewd-xncsvs9g0j9.ws.codeinstitute-ide.net',
 os.environ.get('ALLOWED_HOST'),
 '3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net']
 
