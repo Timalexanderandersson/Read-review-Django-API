@@ -37,8 +37,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = 'DEV' in os.environ
-DEBUG = False
+DEBUG = 'DEV' in os.environ
 
 
 ALLOWED_HOSTS = ['8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net','8000-timalexande-readreviewd-xncsvs9g0j9.ws.codeinstitute-ide.net',
@@ -49,6 +48,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-timalexande-readreviewd-bf0s76f54hz.ws.codeinstitute-ide.net',
     'https://read-review-django-api-b8922a0fef0a.herokuapp.com',
     'https://3000-timalexande-readandrevi-12whr9ar582.ws.codeinstitute-ide.net',
+    'https://8000-timalexande-readreviewd-xncsvs9g0j9.ws.codeinstitute-ide.net'
 
 ]
 
@@ -107,8 +107,8 @@ else:
  
 
 if 'DEV' not in os.environ:
-    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
-        'rest_framework.renderers.JSONRenderer',
+     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
+       'rest_framework.renderers.JSONRenderer',
     ]
 
 REST_USE_JWT = True
