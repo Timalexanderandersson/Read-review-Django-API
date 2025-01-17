@@ -123,7 +123,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,    
     'BLACKLIST_AFTER_ROTATION': True,    
     'ALGORITHM': 'HS256',    
-    'SIGNING_KEY': SECRET_KEY,
+    'SIGNING_KEY': "your-key",
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
