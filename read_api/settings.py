@@ -117,6 +117,7 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
+# Key for JWS token
 SIGNING_KEY = os.getenv('SIGNING_KEY')
 
 SIMPLE_JWT = {
