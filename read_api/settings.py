@@ -115,7 +115,9 @@ REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-JWT_AUTH_SAMESITE = 'None'    
+JWT_AUTH_SAMESITE = 'None'
+
+SIGNING_KEY = os.getenv('SIGNING_KEY')
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=12),
@@ -123,7 +125,7 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,    
     'BLACKLIST_AFTER_ROTATION': True,    
     'ALGORITHM': 'HS256',    
-    'SIGNING_KEY': 'your-secret-key',
+    'SIGNING_KEY': SIGNING_KEY,
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
