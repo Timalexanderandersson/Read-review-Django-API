@@ -123,10 +123,9 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,    
     'BLACKLIST_AFTER_ROTATION': True,    
     'ALGORITHM': 'HS256',    
-    'SIGNING_KEY': "your-key",
+    'SIGNING_KEY': 'your-secret-key',
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
