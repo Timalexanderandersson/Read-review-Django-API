@@ -16,4 +16,23 @@ class EmailSending(generics.CreateAPIView):
             mail = serializer.save()
             self.send_email(mail)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)    
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def send_email(self, request):
+        subject = f'Mail from {mail.name}'
+        message = (
+            f'Name: {mail.name}\n\n'
+            f'Email: {mail.email_user}\n\n'
+            f'About: {mail.show_alternativ}\n'
+            f'Description: {mail.descriptions}'
+        )
+
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = [settings.EMAIL_HOST_USER]
+        send_mail(
+             subject,
+             message,
+             from_email,
+             recipient_list,
+             fail_silently=False,
+        )
