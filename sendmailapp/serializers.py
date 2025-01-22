@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .model import EmailModel
+from .models import EmailModel
 
 # Serializers for sendmailapp
 

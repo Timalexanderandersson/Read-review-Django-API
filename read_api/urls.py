@@ -21,6 +21,7 @@ from .views import api_views
 urlpatterns = [
     path('', api_views),
     path('admin/', admin.site.urls),
+    path('', include('sendmailapp.urls')),
     path('', include('post.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),

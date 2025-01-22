@@ -3,6 +3,8 @@ from rest_framework import generics, status, permissions
 from .serializers import SerializersEmailModel
 from .models import EmailModel
 from rest_framework.response import Response
+from django.conf import settings
+from django.core.mail import send_mail
 
 # Class holding the function for sending email to the admin of the website
 class EmailSending(generics.CreateAPIView):
@@ -16,9 +18,9 @@ class EmailSending(generics.CreateAPIView):
             mail = serializer.save()
             self.send_email(mail)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def send_email(self, request):
+    def send_email(self, mail):
         subject = f'Mail from {mail.name}'
         message = (
             f'Name: {mail.name}\n\n'
