@@ -23,6 +23,12 @@ This is the Read & reviews API build with Django REST Framework. The read & revi
 <img src="images/models-post.PNG">
 </details>
 
+<details>
+<summary>Diagram models Contact </summary>
+<br>
+<img src="images/modelscontact.PNG">
+</details>
+
 - lucid.app to create the diagrams
 
 # Planning
