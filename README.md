@@ -130,6 +130,26 @@ Then press **"Create app"**
 
   Add the CLOUDINARY_URL=cloudinary://<your_api_key>:<your_api_secret>@dwxzdd3bf in this section.
 
+### Creating Google gmail for email.
+
+Logged in to Google account. and go into security on the left side of the screen.
+
+![firstgood](images/gåinhära.PNG)
+
+Here you need to do the **2 step verification** to get access to app password for you gmail.
+
+pressed into the **2 step verification**
+
+![alt text](images/sedanhäraaaaaaa.PNG)
+
+Scrolle down in the webpage untill you find this section och press in to **App password**
+
+![alt text](images/applösen.PNG)
+
+Here you created name for the app project. and you will get the key for the application.
+which you put into the **env.py** file.
+
+![alt text](images/skapalösen.PNG)
 ### Creating env.py file
 
 **Preview of one in the list**
@@ -176,6 +196,14 @@ The domains or hosts Django API is allowed to run **ALLOWED_HOST**
 
 - DEV = "for debug on/off"
 
+  This contains in env.py the gmail account to admin.
+
+- EMAIL_HOST_USER = "Email-to-admin-here"
+
+  This contains the password to gmail account in env.py.
+
+- EMAIL_HOST_PASSWORD = "password-to-gmail"
+
 ### creating config vars in heroku
 
 <details>
@@ -191,6 +219,7 @@ The domains or hosts Django API is allowed to run **ALLOWED_HOST**
 </details>
 
 **Same things as the env.py file here.**
+
 DISABLE_COLLECTSTATIC = 1
 
 ALLOWED_HOST = 'backendherokuapp.com'
@@ -206,6 +235,10 @@ DATABASE_URL = "database-secret-code-here"
 SECRET_KEY = "django-secret-key-here"
 
 DEV = "for debug on/off"
+
+EMAIL_HOST_USER = "Email-to-admin-here"
+
+EMAIL_HOST_PASSWORD = "password-to-gmail"
 
 ### deploy heroku application
 
