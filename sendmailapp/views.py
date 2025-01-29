@@ -7,6 +7,8 @@ from django.conf import settings
 from django.core.mail import send_mail
 
 # Class holding the function for sending email to the admin of the website
+
+
 class EmailSending(generics.CreateAPIView):
     serializer_class = SerializersEmailModel
     queryset = EmailModel.objects.all()

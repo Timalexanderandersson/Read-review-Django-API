@@ -3,6 +3,7 @@ from .models import EmailModel
 
 # Serializers for sendmailapp
 
+
 class SerializersEmailModel(serializers.ModelSerializer):
 
     class Meta:
@@ -13,5 +14,4 @@ class SerializersEmailModel(serializers.ModelSerializer):
             "show_alternativ",
             "descriptions",
             "created_at",
-            
         ]

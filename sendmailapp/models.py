@@ -1,8 +1,10 @@
 from django.db import models
 
 # Model for sending email from the website
+
+
 class EmailModel(models.Model):
-    
+
     name = models.CharField(max_length=150)
     email_user = models.EmailField()
     show_alternativ = models.CharField(choices=[
