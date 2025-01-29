@@ -218,9 +218,11 @@ The domains or hosts Django API is allowed to run **ALLOWED_HOST**
 <img src="images/läggatrilldoin.PNG">
 </details>
 
-**Same things as the env.py file here.**
+**things from the env.py file here.**
 
-DISABLE_COLLECTSTATIC = 1
+DISABLE_COLLECTSTATIC is added inside the config vars.
+
+DISABLE_COLLECTSTATIC = 1 
 
 ALLOWED_HOST = 'backendherokuapp.com'
 
@@ -233,8 +235,6 @@ CLOUDINARY_URL = 'API-for-CLOUDINARY-key-here'
 DATABASE_URL = "database-secret-code-here"
 
 SECRET_KEY = "django-secret-key-here"
-
-DEV = "for debug on/off"
 
 EMAIL_HOST_USER = "Email-to-admin-here"
 
