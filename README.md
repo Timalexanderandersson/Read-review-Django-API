@@ -31,6 +31,24 @@ This is the Read & reviews API build with Django REST Framework. The read & revi
 
 - lucid.app to create the diagrams
 
+## Diagram for Database
+
+### Post and comment database table
+
+![database](images/forginekey.PNG)
+
+Post contains the id for the post, created_at is the timestamp for when it was done, title for post made , description for the post,image_post is the image of the review, user_id is the id of user.
+
+Comments contains id for the comment, created_at is the timestamp for when it was done, comment for user to comment a text, post_id is the id of the post user is on, user_id is the id of user.
+
+### Sendmailapp database table
+
+![sendmail](images/mailapp.PNG)
+
+Containing Id, name on the contact user, email_user for email adress, show_alternativ is alternativs for what this contact is about.
+
+description about the contact, and created_at as a timestamp when it was made.
+
 # Planning
 
 ### User stories om github
@@ -357,7 +375,7 @@ urllib3==1.26.20
 ## Credits
 
 ### Help from websites.
-
+- dbdiagram.io for database diagram.
 - https://www.django-rest-framework.org/ 
 - Code institute project for Django REST framework.
 - lucid.app for making my models.
