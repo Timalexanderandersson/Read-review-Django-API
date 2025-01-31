@@ -371,6 +371,7 @@ urllib3==1.26.20
 - PostgreSQL: Database
 - Lucidchart: models Diagram.
 - Heroku: for deploying back-end.
+- dbdiagram: for database diagram.
 
 ## Credits
 
